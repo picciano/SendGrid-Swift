@@ -10,6 +10,10 @@
 		B43CF8D720092C8800EC114B /* SendGrid_Swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B43CF8CD20092C8800EC114B /* SendGrid_Swift.framework */; };
 		B43CF8DC20092C8800EC114B /* SendGrid_SwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B43CF8DB20092C8800EC114B /* SendGrid_SwiftTests.swift */; };
 		B43CF8DE20092C8800EC114B /* SendGrid_Swift.h in Headers */ = {isa = PBXBuildFile; fileRef = B43CF8D020092C8800EC114B /* SendGrid_Swift.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B43CF8E820092E9800EC114B /* SendGrid-Swift.podspec in Resources */ = {isa = PBXBuildFile; fileRef = B43CF8E720092E9800EC114B /* SendGrid-Swift.podspec */; };
+		B43CF8EA2009307B00EC114B /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = B43CF8E92009307B00EC114B /* LICENSE */; };
+		B43CF8EC2009328300EC114B /* SendGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = B43CF8EB2009328300EC114B /* SendGrid.swift */; };
+		B43CF8F02009386C00EC114B /* SendGridEmail.swift in Sources */ = {isa = PBXBuildFile; fileRef = B43CF8EF2009386C00EC114B /* SendGridEmail.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +33,10 @@
 		B43CF8D620092C8800EC114B /* SendGrid-SwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SendGrid-SwiftTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B43CF8DB20092C8800EC114B /* SendGrid_SwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendGrid_SwiftTests.swift; sourceTree = "<group>"; };
 		B43CF8DD20092C8800EC114B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B43CF8E720092E9800EC114B /* SendGrid-Swift.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = "SendGrid-Swift.podspec"; sourceTree = "<group>"; };
+		B43CF8E92009307B00EC114B /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		B43CF8EB2009328300EC114B /* SendGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendGrid.swift; sourceTree = "<group>"; };
+		B43CF8EF2009386C00EC114B /* SendGridEmail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendGridEmail.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +61,8 @@
 		B43CF8C320092C8800EC114B = {
 			isa = PBXGroup;
 			children = (
+				B43CF8E92009307B00EC114B /* LICENSE */,
+				B43CF8E720092E9800EC114B /* SendGrid-Swift.podspec */,
 				B43CF8CF20092C8800EC114B /* SendGrid-Swift */,
 				B43CF8DA20092C8800EC114B /* SendGrid-SwiftTests */,
 				B43CF8CE20092C8800EC114B /* Products */,
@@ -73,6 +83,8 @@
 			children = (
 				B43CF8D020092C8800EC114B /* SendGrid_Swift.h */,
 				B43CF8D120092C8800EC114B /* Info.plist */,
+				B43CF8EB2009328300EC114B /* SendGrid.swift */,
+				B43CF8EF2009386C00EC114B /* SendGridEmail.swift */,
 			);
 			path = "SendGrid-Swift";
 			sourceTree = "<group>";
@@ -148,6 +160,7 @@
 				TargetAttributes = {
 					B43CF8CC20092C8800EC114B = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 					};
 					B43CF8D520092C8800EC114B = {
@@ -179,6 +192,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B43CF8EA2009307B00EC114B /* LICENSE in Resources */,
+				B43CF8E820092E9800EC114B /* SendGrid-Swift.podspec in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -196,6 +211,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B43CF8F02009386C00EC114B /* SendGridEmail.swift in Sources */,
+				B43CF8EC2009328300EC114B /* SendGrid.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -334,6 +351,7 @@
 		B43CF8E220092C8800EC114B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -343,10 +361,12 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "SendGrid-Swift/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.picciano.SendGrid-Swift";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -355,6 +375,7 @@
 		B43CF8E320092C8800EC114B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -364,6 +385,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "SendGrid-Swift/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.picciano.SendGrid-Swift";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
@@ -376,6 +398,7 @@
 		B43CF8E520092C8800EC114B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PC5SP4V242;
 				INFOPLIST_FILE = "SendGrid-SwiftTests/Info.plist";
@@ -390,6 +413,7 @@
 		B43CF8E620092C8800EC114B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PC5SP4V242;
 				INFOPLIST_FILE = "SendGrid-SwiftTests/Info.plist";
