@@ -14,6 +14,7 @@
 		B43CF8EA2009307B00EC114B /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = B43CF8E92009307B00EC114B /* LICENSE */; };
 		B43CF8EC2009328300EC114B /* SendGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = B43CF8EB2009328300EC114B /* SendGrid.swift */; };
 		B43CF8F02009386C00EC114B /* SendGridEmail.swift in Sources */ = {isa = PBXBuildFile; fileRef = B43CF8EF2009386C00EC114B /* SendGridEmail.swift */; };
+		B43CF8F22009632A00EC114B /* SendGridResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B43CF8F12009632A00EC114B /* SendGridResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +38,7 @@
 		B43CF8E92009307B00EC114B /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		B43CF8EB2009328300EC114B /* SendGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendGrid.swift; sourceTree = "<group>"; };
 		B43CF8EF2009386C00EC114B /* SendGridEmail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendGridEmail.swift; sourceTree = "<group>"; };
+		B43CF8F12009632A00EC114B /* SendGridResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendGridResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +87,7 @@
 				B43CF8D120092C8800EC114B /* Info.plist */,
 				B43CF8EB2009328300EC114B /* SendGrid.swift */,
 				B43CF8EF2009386C00EC114B /* SendGridEmail.swift */,
+				B43CF8F12009632A00EC114B /* SendGridResponse.swift */,
 			);
 			path = "SendGrid-Swift";
 			sourceTree = "<group>";
@@ -211,6 +214,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B43CF8F22009632A00EC114B /* SendGridResponse.swift in Sources */,
 				B43CF8F02009386C00EC114B /* SendGridEmail.swift in Sources */,
 				B43CF8EC2009328300EC114B /* SendGrid.swift in Sources */,
 			);

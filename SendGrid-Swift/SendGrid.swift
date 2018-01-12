@@ -17,7 +17,7 @@ public struct SendGrid {
         self.apiKey = apiKey
     }
     
-    @discardableResult public func send(email: SendGridEmail, completion: @escaping ((Data?, URLResponse?, Error?) -> ())) -> URLSessionDataTask {
+    @discardableResult public func send(email: SendGridEmail, completion: @escaping ((SendGridResponse?, Error?) -> ())) -> URLSessionDataTask {
         var request = URLRequest(url: mailSendURL)
         request.httpMethod = "POST"
         request.setValue("Bearer \(apiKey)", forHTTPHeaderField: "Authorization")
@@ -25,7 +25,19 @@ public struct SendGrid {
         request.httpBody = email.jsonData
         
         let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
-            completion(data, response, error)
+            var sendGridResponse: SendGridResponse?
+            var responseError = error
+            
+            if let data = data {
+                sendGridResponse = SendGridResponse(data: data)
+            }
+            
+            if let errors = sendGridResponse?.errors, errors.count > 0, responseError == nil {
+                let code = (response as? HTTPURLResponse)?.statusCode ?? 400
+                responseError = NSError(domain: "SendGrid", code: code, userInfo: [NSLocalizedDescriptionKey: errors[0].message])
+            }
+            
+            completion(sendGridResponse, responseError)
         }
         
         task.resume()
