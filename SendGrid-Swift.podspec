@@ -4,7 +4,7 @@ Pod::Spec.new do |s|
   s.name = "SendGrid-Swift"
   s.summary = "SendGrid-Swift allows sending email using SendGrid v3."
   s.requires_arc = true
-  s.version = "0.1.1"
+  s.version = "0.1.2"
   s.license = { :type => "MIT", :file => "LICENSE" }
   s.author = { "Anthony Picciano" => "anthony.picciano@gmail.com" }
   s.homepage = "https://github.com/picciano/SendGrid-Swift"
